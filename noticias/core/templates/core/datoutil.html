@@ -1,0 +1,24 @@
+{% extends 'core\base.html'%}
+{% load static %}
+{%block js%}
+{%endblock%}
+{%block contenido%}
+<div class="container">
+  <h6>Noticias Dato util </h6>
+  <div class="pading"></div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {%for n in noticias%}
+    <div class="col">
+      <div class="card">
+        {% if n.imagen %}
+        <img src="{{n.imagen.url}}" class="card-img-top" alt="...">
+        {%endif%}
+        <div class="card-body">
+            <a href="{% url 'mundo1'%}" id="fontcardindex">{{n.NombreNoticia}}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{%endblock%}

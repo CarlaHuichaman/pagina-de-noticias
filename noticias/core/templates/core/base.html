@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% block css%}
+    <link rel="stylesheet" href="{% static 'core/css/miestilo.css'%}">
+    {% endblock%}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Caos News</title>
+    <script src="ApiClima.js"></script>
+    
+</head>
+<body>
+  
+    <!--Nanbar  -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="{% static 'core/img/news.png' %}" alt="" width="95" height="65" class="d-inline-block align-text-top">
+              CAOS NEWS
+            </a>
+        </div>
+        <body>
+          <div id="msj">
+          </div>
+        </body>
+        
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'nosotros'%}">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'buscadornoticias'%}" id="navespaciales">Noticias Espaciales</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categorías
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'nacional'%}">Nacional</a></li>
+                     <li><a class="dropdown-item" href="{% url 'mundo'%}">Mundo</a></li>
+                     <li><a class="dropdown-item" href="{% url 'datoutil'%}">Dato Útil</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    funciones
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'agregar_noticia'%}">agregar noticia</a></li>
+                   <li><a class="dropdown-item" href="{% url 'listar_noticia'%}">listar noticias</a></li>
+                </ul>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'pagperiodista'%}">Periodistas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contacto'%}">Contacto</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input id="nt" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button id="bt" class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+            </div>
+          </div>
+    </nav>
+
+
+    <div class="card-body">
+    <div class="d-flex justify-content-end">
+      <a href="Login.html" class="card-link">Iniciar Sesión</a>
+      <img src="{%static 'core/img/icono login.png'%}" alt="" width="25" height="25" class="d-inline-block align-text-top">
+    </div>
+    </div>
+    <div class="card-body">
+    <div class="d-flex justify-content-end">
+      <a href="Registro.html" class="card-link">Registrar</a>
+      <img src="{%static 'core/img/Icono Registrarse.png'%}" alt="" width="30" height="25" class="d-inline-block align-text-top">
+    </div>
+    </div>
+    <div id="contenido">
+        {% block contenido%}
+        {% endblock%}
+    </div>
+    {%block js %}
+    {%endblock%}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>

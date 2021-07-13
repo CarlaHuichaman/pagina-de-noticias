@@ -1,0 +1,27 @@
+{% extends 'core\base.html'%}
+{% load static %}
+{%block js%}
+{%endblock%}
+{%block contenido%}
+{% load crispy_forms_tags %}
+<div class="row">
+  <div class="col-12 col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body" id="envmens">
+        <h1>Contactanos</h1>
+        <form action="" class="formulario_contacto" method="POST">
+          {% csrf_token %}
+          {{ form | crispy}}
+          <div class="pading"></div>
+          <div class="d-flex justify-content-end">
+            <input type="reset" value="Cancelar" class="btn btn-secondary">
+            &nbsp;
+            <button type="submit" class="btn btn-primary" id="enviarcontacto">Enviar</button>
+          </div>
+        </form>
+        {{mensaje}}
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

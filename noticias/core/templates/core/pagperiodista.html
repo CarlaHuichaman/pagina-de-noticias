@@ -1,0 +1,97 @@
+{% extends 'core\base.html'%}
+{% load static %}
+{%block js%}
+{%endblock%}
+{%block contenido%}
+<div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col-md-4 clearfix d-none d-md-block" >
+        <div class="card text-center" style="width: 18rem;">
+          <img src="{% static 'core/img/imgperiodistas/Periodista1.jpg'%}" id="imgper" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Periodista</h5>
+            <p class="card-text">Maite Sepúlveda</p>
+            <a href="{% url 'periodista1'%}" id="btnperiodistas" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-md-4 clearfix d-none d-md-block">  
+        <div class="card text-center" style="width: 18rem;">
+          <img src="/ImgPeriodistas/Periodista2.jpg" id="imgper" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Periodista</h5>
+            <p class="card-text">Cristina Carrasco</p>
+            <a href="/periodistas/PerfilPeriodista 2.html" id="btnperiodistas" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-md-4 clearfix d-none d-md-block">  
+          <div class="card text-center" style="width: 18rem;">
+            <img src="/ImgPeriodistas/Periodista3.jpg" id="imgper" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Periodista</h5>
+              <p class="card-text">Valentina Flores</p>
+              <a href="/periodistas/PerfilPeriodista 3.html" id="btnperiodistas" class="btn btn-primary">Ver Más</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="col-1"></div>
+    </div>
+  </div>
+  <div class="pading"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+          <div class="card text-center" style="width: 18rem;">
+            <img src="/ImgPeriodistas/Periodista4.jpg" id="imgper" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Periodista</h5>
+              <p class="card-text">Marcos Bandera</p>
+              <a href="/periodistas/PerfilPeriodista 4.html" id="btnperiodistas" class="btn btn-primary">Ver Más</a>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">  
+          <div class="card text-center" style="width: 18rem;">
+            <img src="/ImgPeriodistas/Periodista5.jpg" id="imgper" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Periodista</h5>
+              <p class="card-text">Sebastián Antupiren</p>
+              <a href="/periodistas/PerfilPeriodista 5.html" id="btnperiodistas" class="btn btn-primary">Ver Más</a>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">  
+            <div class="card text-center" style="width: 18rem;">
+              <img src="/ImgPeriodistas/Periodista6.jpg" id="imgper" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Periodista</h5>
+                <p class="card-text">Valentina Flores</p>
+                <a href="/periodistas/PerfilPeriodista 6.html" id="btnperiodistas" class="btn btn-primary">Ver Más</a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      <div class="col-1"></div>
+      </div>
+    </div>
+{%endblock%}

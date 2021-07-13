@@ -1,0 +1,56 @@
+{% extends 'core\base.html'%}
+{% load static %}
+{%block js%}
+<script src="ApiNoticias.js"></script>
+{%endblock%}
+{%block contenido%}
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+
+      </div>
+      <div class="col-2">
+        <div class="card-body">
+          <div class="d-flex justify-content-end">
+            <p>Xxxx Xxxx</p>
+            <img src="{%static 'core/img/Imagenes/Icono Login.png'%}" alt="" width="25" height="25" class="d-inline-block align-text-top">
+          </div>
+        </div>
+    
+        <div class="card-body">
+          <div class="d-flex justify-content-end">
+            <a href="#" class="card-link">Cerrar Sesión </a>
+            <img src="{%static 'core/img/Imagenes/Icono Cerrar Sesion.png'%}" alt="" width="30" height="25" class="d-inline-block align-text-top">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <h1>NOTICIAS ESPACIALES</h1>
+      </div>
+      <div class="row">
+          <button type="button" class="btn w-100" id="enviar">🚀 Mostrar todas las Noticias Espaciales 🚀</button>
+      </div>
+
+      <div class="row">
+          <table class="table" id="noticias">
+              <thead>
+                  <tr>
+                      <th scope="col">Titulo</th>
+                      <th scope="col">Portal de Noticias</th>
+                      <th scope="col">Resumen</th>
+                      <th scope="col">Imagen</th>
+                      <th scope="col">Link Noticia</th>
+                  </tr>
+              </thead>
+              <tbody>
+      
+              </tbody>
+          </table>
+      </div>
+  </div>
+{%endblock%}

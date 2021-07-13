@@ -1,0 +1,59 @@
+{% extends 'core\base.html'%}
+{% load static %}
+{%block js%}
+{%endblock%}
+{% block contenido%}
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+      <div class="carousel-item active">
+       <img style=" width: 10px; height: 400px;" src="{%static 'core/img/ImgNoticias/DatoUtil1.jpg'%}" class="d-block w-100" alt="...">
+       <h6 class="display-5">Bono "Dueña de Casa" 2021: Quiénes pueden cobrar los montos</h6>
+      </div>
+      <div class="carousel-item">
+       <img style=" width: 10px; height: 400px;" src="{% static 'core/img/ImgNoticias/DatoUtil2.'%}jpg" class="d-block w-100" alt="...">
+       <h6 class="display-5">Plan Solidario de Conectividad: Revisa cómo solicitar internet gratis por tres meses </h6>
+      </div>
+      <div class="carousel-item">
+       <img style=" width: 10px; height: 400px;" href="" src="{% static 'core/img/ImgNoticias/Mundo1.jpg'%}" class="d-block w-100" alt="...">
+       <h6 class="display-5"> "Un porro por una vacuna": ofrecen marihuana gratis en Nueva York para los inoculados </h6>
+      </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+  
+  <div class="pading"></div>
+  
+
+  <div class="pading"></div>
+  <div class="col">
+    <h6>Destacados</h6>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {%for n in noticias%}
+    <div class="col">
+      <div class="card">
+        {% if n.imagen %}
+        <img src="{{n.imagen.url}}" class="card-img-top" alt="...">
+        {%endif%}
+        <div class="card-body">
+            <a href="{% url 'mundo1'%}" id="fontcardindex">{{n.NombreNoticia}}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{%endblock%}

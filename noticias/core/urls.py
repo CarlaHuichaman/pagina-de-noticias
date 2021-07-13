@@ -1,0 +1,33 @@
+from django.urls import path
+from .views import home , index , buscadornoticias , contacto ,contacto , detallenoticia , datoutil , galeriadefotos , login , mundo , nacional , nosotros , pagperiodista , registro , datoutil1 , datoutil2 , mundo1 , mundo2 , nacional1 , nacional2 , periodista1 , periodista2 , periodista3 , periodista4 , periodista5 , periodista6 , agregar_noticia , listar_noticia , modificar_noticia , eliminar_noticia
+
+urlpatterns=[
+    path('index/',index,name="index"),
+    path('buscadornoticias/',buscadornoticias,name="buscadornoticias"),
+    path('contacto/',contacto,name="contacto"),
+    path('datoutil/',datoutil,name="datoutil"),
+    path('detallenoticia/',detallenoticia,name="detallenoticia"),
+    path('galeriadefotos/',galeriadefotos,name="galeriadefotos"),
+    path('login/',login,name="login"),
+    path('mundo/',mundo,name="mundo"),
+    path('nacional/',nacional,name="nacional"),
+    path('nosotros/',nosotros,name="nosotros"),
+    path('pagperiodista/',pagperiodista,name="pagperiodista"),
+    path('registro/',registro,name="registro"),
+    path('datoutil1/',datoutil1,name="datoutil1"),
+    path('datoutil2/',datoutil2,name="datoutil2"),
+    path('mundo1/',mundo1,name="mundo1"),
+    path('mundo2/',mundo2,name="mundo2"),
+    path('nacional1/',nacional1,name="nacional1"),
+    path('nacional2/',nacional2,name="nacional2"),
+    path('periodista1/',periodista1,name="periodista1"),
+    path('periodista2/',periodista2,name="periodista2"),
+    path('periodista3/',periodista3,name="periodista3"),
+    path('periodista4/',periodista4,name="periodista4"),
+    path('periodista5/',periodista5,name="periodista5"),
+    path('periodista6/',periodista6,name="periodista6"),
+    path('agregar-noticia/',agregar_noticia,name="agregar_noticia"),
+    path('listar-noticia/',listar_noticia,name="listar_noticia"),
+    path('modificar-noticia/<id>/',modificar_noticia,name="modificar_noticia"),
+    path('eliminar-noticia/<id>/',eliminar_noticia,name="eliminar_noticia"),
+]
