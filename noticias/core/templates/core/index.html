@@ -15,15 +15,14 @@
        <img style=" width: 10px; height: 400px;" src="{%static 'core/img/ImgNoticias/DatoUtil1.jpg'%}" class="d-block w-100" alt="...">
        <h6 class="display-5">Bono "Dueña de Casa" 2021: Quiénes pueden cobrar los montos</h6>
       </div>
+      {%for n in noticias%}
       <div class="carousel-item">
-       <img style=" width: 10px; height: 400px;" src="{% static 'core/img/ImgNoticias/DatoUtil2.'%}jpg" class="d-block w-100" alt="...">
-       <h6 class="display-5">Plan Solidario de Conectividad: Revisa cómo solicitar internet gratis por tres meses </h6>
+        {% if n.imagen %}
+        <img style=" width: 10px; height: 400px;" src="{{n.imagen.url}}" class="d-block w-100" alt="...">
+        {% endif %}
+       <h6 class="display-5">{{n.NombreNoticia}}</h6>
       </div>
-      <div class="carousel-item">
-       <img style=" width: 10px; height: 400px;" href="" src="{% static 'core/img/ImgNoticias/Mundo1.jpg'%}" class="d-block w-100" alt="...">
-       <h6 class="display-5"> "Un porro por una vacuna": ofrecen marihuana gratis en Nueva York para los inoculados </h6>
-      </div>
-      </div>
+      {% endfor %}
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
