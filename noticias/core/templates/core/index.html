@@ -35,6 +35,37 @@
   
   <div class="pading"></div>
   
+  <div class="row align-items-center">
+    <div class="col">
+    <h6>Noticias</h6>
+    </div>
+    <div class="col">
+        <div class="d-grid gap-2 ">
+        <div class="btn-group">
+            <button class="btn $gray-300 btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'nacional'%}">Nacional</a></li>
+                     <li><a class="dropdown-item" href="{% url 'mundo'%}">Mundo</a></li>
+                     <li><a class="dropdown-item" href="{% url 'datoutil'%}">Dato Útil</a></li>
+          </ul>
+          </div>
+          </div>
+         
+    </div>
+    <div class="col">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn $teal-300 btn-secondary btn-lg" href="{% url 'pagperiodista'%}" role="button" >   Periodistas   </a>
+        </div>
+    </div>
+    
+    <div class="col">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn $teal-300 btn-secondary btn-lg" href="{% url 'galeriadefotos'%}" role="button" >Galería</a>
+    </div>
+    </div>
+  </div>
 
   <div class="pading"></div>
   <div class="col">
