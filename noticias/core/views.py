@@ -1,9 +1,9 @@
 from django.shortcuts import render , redirect , get_object_or_404
 from .models import Categoria , Periodista , Noticia
 from .forms import ContactoForm , NoticiaForm
+from django.contrib import messages
 # Create your views here.
-def home(request):
-    return render(request,'core/index.html')
+
 
 def index(request):
     noticia = Noticia.objects.all()
@@ -113,7 +113,7 @@ def agregar_noticia(request):
         formulario = NoticiaForm(data=request.POST,files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"]="Noticia Agregada exitosamente"
+            messages.success(request,"Noticia registrada")
         else:
             data["form"]=formulario
     return render(request,'core/noticia/agregar.html',data)
@@ -134,6 +134,7 @@ def modificar_noticia(request,id):
         formulario=NoticiaForm(data=request.POST,instance=noticia, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request,"modificado correctamente")
             return redirect(to="listar_noticia")
         data["form"]=formulario
     return render(request,'core/noticia/modificar.html',data)
@@ -141,4 +142,5 @@ def modificar_noticia(request,id):
 def eliminar_noticia(request,id):
     noticia=get_object_or_404(Noticia,id=id)
     noticia.delete()
+    messages.success(request,"eliminado correctamente")
     return redirect(to="listar_noticia")

@@ -1,6 +1,23 @@
 {% extends 'core\base.html'%}
 {% load static %}
 {%block js%}
+<script>
+    function eliminarnoticia(id){
+        Swal.fire({
+            "title":"¿estas seguro?",
+            "text":"esta accion no se puede devolver",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText" :"No, Cancelar",
+            "confirmButtonText":"Si,Eliminar"
+        })
+        .then(function(result){
+            if(result.isConfirm){
+                widow.location.href = "/eliminar-noticia/"+id+"/"
+            }
+        })
+    }
+</script>
 {%endblock%}
 {%block contenido%}
 {% load crispy_forms_tags %}
@@ -25,10 +42,11 @@
                 <td>{{n.Ubicacion}}</td>
                 <td>
                     <a href="{% url 'modificar_noticia' n.id %}" class="btn btn-info btn-sm">modificar</a>
-                    <a href="{% url 'eliminar_noticia' n.id %}" class="btn btn-danger btn-sm">eliminar</a>
+                    <a href="#" onclick="eliminarnoticia({{n.id}})" class="btn btn-danger btn-sm">eliminar</a>
                 </td>
             </tr>
             {%endfor%}
+
         </table>
     </div>
 </div>

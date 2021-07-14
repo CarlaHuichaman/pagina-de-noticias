@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+LOGIN_REDIRECT_URL = '/index/'
+LOGINOUT_REDIRECT_URL ='/index/'
 
 # Application definition
 
@@ -80,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'duoc',
         'USER': 'duoc',
-        'PASSWORD': '1313',
+        'PASSWORD': 'duoc2021',
         'HOST': 'localhost',
         'PORT': '3306',
     }

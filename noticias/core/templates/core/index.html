@@ -12,8 +12,8 @@
       </div>
       <div class="carousel-inner">
       <div class="carousel-item active">
-       <img style=" width: 10px; height: 400px;" src="{%static 'core/img/ImgNoticias/DatoUtil1.jpg'%}" class="d-block w-100" alt="...">
-       <h6 class="display-5">Bono "Dueña de Casa" 2021: Quiénes pueden cobrar los montos</h6>
+       <img style=" width: 10px; height: 400px;" src="{% static 'core/img/news.png'%}" class="d-block w-100" alt="...">
+       <h6 class="display-5">{{n.NombreNoticia}}</h6>
       </div>
       {%for n in noticias%}
       <div class="carousel-item">
@@ -48,7 +48,7 @@
         <img src="{{n.imagen.url}}" class="card-img-top" alt="...">
         {%endif%}
         <div class="card-body">
-            <a href="{% url 'mundo1'%}" id="fontcardindex">{{n.NombreNoticia}}</a>
+          <a href="{% url 'mundo1'%}" id="fontcardindex">{{n.NombreNoticia}}</a>
         </div>
       </div>
     </div>
