@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'crispy_forms',
+    'rest_framework',
 ]
 CRYSPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'duoc',
         'USER': 'duoc',
-        'PASSWORD': 'duoc2021',
+        'PASSWORD': '1313',
         'HOST': 'localhost',
         'PORT': '3306',
     }
