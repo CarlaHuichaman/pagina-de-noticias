@@ -12,7 +12,7 @@
       </div>
       <div class="carousel-inner">
       <div class="carousel-item active">
-       <img style=" width: 10px; height: 400px;" src="{% static 'core/img/news.png'%}" class="d-block w-100" alt="...">
+       <img style=" width: 10px; height: 400px;" src="{% static 'core/img/img.jpg'%}" class="d-block w-100" alt="...">
        <h6 class="display-5">{{n.NombreNoticia}}</h6>
       </div>
       {%for n in noticias%}
@@ -68,9 +68,7 @@
   </div>
 
   <div class="pading"></div>
-  <div class="col">
-    <h6>Destacados</h6>
-  </div>
+  
   <div class="row row-cols-1 row-cols-md-2 g-4">
     {%for n in noticias%}
     <div class="col">

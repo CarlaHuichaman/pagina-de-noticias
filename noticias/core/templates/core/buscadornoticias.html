@@ -1,32 +1,9 @@
 {% extends 'core\base.html'%}
 {% load static %}
 {%block js%}
-<script src="ApiNoticias.js"></script>
+<script src="{% static 'core/js/ApiNoticias.js'%}"></script>
 {%endblock%}
 {%block contenido%}
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-2"></div>
-      <div class="col-8">
-
-      </div>
-      <div class="col-2">
-        <div class="card-body">
-          <div class="d-flex justify-content-end">
-            <p>Xxxx Xxxx</p>
-            <img src="{%static 'core/img/Imagenes/Icono Login.png'%}" alt="" width="25" height="25" class="d-inline-block align-text-top">
-          </div>
-        </div>
-    
-        <div class="card-body">
-          <div class="d-flex justify-content-end">
-            <a href="#" class="card-link">Cerrar Sesión </a>
-            <img src="{%static 'core/img/Imagenes/Icono Cerrar Sesion.png'%}" alt="" width="30" height="25" class="d-inline-block align-text-top">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="container">
       <div class="row">
