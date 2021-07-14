@@ -58,8 +58,12 @@
                     funciones
                   </a>
                   <ul class="dropdown-menu">
+                    {% if perms.core.add_noticia %}
                     <li><a class="dropdown-item" href="{% url 'agregar_noticia'%}">agregar noticia</a></li>
+                    {%endif%}
+                    {% if perms.core.view_noticia %}
                    <li><a class="dropdown-item" href="{% url 'listar_noticia'%}">listar noticias</a></li>
+                   {%endif%}
                 </ul>
               </li>
                 <li class="nav-item">
@@ -80,16 +84,24 @@
 
     <div class="card-body">
     <div class="d-flex justify-content-end">
-      <a href="{% url 'login'%}" class="card-link">Iniciar Sesión</a>
+      {%if user.is_authenticated %}
+      <a href="{% url 'logout'%}" class="card-link">Cerrar sesion</a>
+      <li>
+        <a href="#">@{{user.username}}</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{% url 'login'%}" class="card-link">Iniciar sesion</a>
+      </li>
+      <li>
+        <a href="{% url 'registro'%}" class="card-link">registrar</a>
+      </li>
+
+      {% endif%}
       <img src="{%static 'core/img/icono login.png'%}" alt="" width="25" height="25" class="d-inline-block align-text-top">
     </div>
     </div>
-    <div class="card-body">
-    <div class="d-flex justify-content-end">
-      <a href="{% url 'logout'%}" class="card-link">cerrar sesion</a>
-      <img src="{%static 'core/img/Icono Registrarse.png'%}" alt="" width="30" height="25" class="d-inline-block align-text-top">
-    </div>
-    </div>
+    
     <div id="contenido">
         {% block contenido%}
         {% endblock%}
