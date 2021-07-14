@@ -1,7 +1,8 @@
 from django.shortcuts import render , redirect , get_object_or_404
 from .models import Categoria , Periodista , Noticia
-from .forms import ContactoForm , NoticiaForm
+from .forms import ContactoForm , NoticiaForm , CustomUserCreationForm
 from django.contrib import messages
+from django.contrib.auth import authenticate , login
 # Create your views here.
 
 
@@ -42,9 +43,6 @@ def datoutil(request):
 
 def galeriadefotos(request):
     return render(request,'core/galeriadefotos.html')
-
-def login(request):
-    return render(request,'core/login.html')
 
 def mundo(request):
     noticia = Noticia.objects.filter(categoria=1)
@@ -144,3 +142,18 @@ def eliminar_noticia(request,id):
     noticia.delete()
     messages.success(request,"eliminado correctamente")
     return redirect(to="listar_noticia")
+
+def registro(request):
+    data={
+        'form':CustomUserCreationForm()
+    }
+    if request.method =='POST':
+        formulario=CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user =authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request,user)
+            messages.success(request,"te has registrado correctamente")
+            return redirect("index")
+        data["form"]=formulario
+    return render(request,'registration/registro.html',data)

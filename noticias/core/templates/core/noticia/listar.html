@@ -23,15 +23,15 @@
 {% load crispy_forms_tags %}
 <div class="card">
     <div class="card-body">
-        <h2>Listado Noticias</h2>
+        <h2>Listado noticias</h2>
         <hr>
         <table class="table-striped table-hover table-responsive-sm">
             <tr>
-                <th>Título</th>
-                <th>Fecha</th>
-                <th>Categoría</th>
-                <th>Ubicación</th>
-                <th>Opciones</th>
+                <th>titulo</th>
+                <th>fecha</th>
+                <th>categoria</th>
+                <th>ubicacion</th>
+                <th>opciones</th>
             </tr>
 
             {%for n in noticias%}
@@ -41,8 +41,12 @@
                 <td>{{n.categoria}}</td>
                 <td>{{n.Ubicacion}}</td>
                 <td>
+                    {% if perms.core.change_noticia %}
                     <a href="{% url 'modificar_noticia' n.id %}" class="btn btn-info btn-sm">modificar</a>
+                    {%endif%}
+                    {% if perms.core.delete_noticia %}
                     <a href="#" onclick="eliminarnoticia({{n.id}})" class="btn btn-danger btn-sm">eliminar</a>
+                    {%endif%}
                 </td>
             </tr>
             {%endfor%}
