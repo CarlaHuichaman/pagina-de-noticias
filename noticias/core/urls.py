@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home , index , buscadornoticias , contacto ,contacto , detallenoticia , datoutil , galeriadefotos , login , mundo , nacional , nosotros , pagperiodista , registro , datoutil1 , datoutil2 , mundo1 , mundo2 , nacional1 , nacional2 , periodista1 , periodista2 , periodista3 , periodista4 , periodista5 , periodista6 , agregar_noticia , listar_noticia , modificar_noticia , eliminar_noticia
+from .views import index , buscadornoticias , contacto ,contacto , detallenoticia , datoutil , galeriadefotos , login , mundo , nacional , nosotros , pagperiodista , registro , datoutil1 , datoutil2 , mundo1 , mundo2 , nacional1 , nacional2 , periodista1 , periodista2 , periodista3 , periodista4 , periodista5 , periodista6 , agregar_noticia , listar_noticia , modificar_noticia , eliminar_noticia
 
 urlpatterns=[
     path('index/',index,name="index"),
