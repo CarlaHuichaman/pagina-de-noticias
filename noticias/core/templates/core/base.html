@@ -55,14 +55,14 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    funciones
+                    Funciones
                   </a>
                   <ul class="dropdown-menu">
                     {% if perms.core.add_noticia %}
-                    <li><a class="dropdown-item" href="{% url 'agregar_noticia'%}">agregar noticia</a></li>
+                    <li><a class="dropdown-item" href="{% url 'agregar_noticia'%}">Agregar Noticia</a></li>
                     {%endif%}
                     {% if perms.core.view_noticia %}
-                   <li><a class="dropdown-item" href="{% url 'listar_noticia'%}">listar noticias</a></li>
+                   <li><a class="dropdown-item" href="{% url 'listar_noticia'%}">Listar Noticias</a></li>
                    {%endif%}
                 </ul>
               </li>

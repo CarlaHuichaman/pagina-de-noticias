@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>periodista 6</h1>
-</body>
-</html>
+{% extends 'core\base.html'%}
+{% load static %}
+{%block js%}
+{%endblock%}
+{%block contenido%}
+<div class="container">
+    <h6><a href="{% url 'pagperiodista'%}" id="volverperiodistas">>Periodistas</a></h6>
+    <div class="row justify-content-center">
+    <div class="card w-50" id="blockborder2">
+      <div class="card-body justify-content-center" >
+        <h6 class="display-6"> Nombre: Sebastián Antupiren </h6>
+        <h6 class="display-6"> <img src="{% static 'core/img/imgperiodistas/Periodista6.jpg'%}" id="imgderecha" width="150px" height="170px" alt=""> Edad: 25</h6>
+        <h6 class="display-6" >Categorías: Nacional</h6>
+        <h6 class="display-6" >Ocupación/es: Estudiante de Periodismo | U. de Chile, pyme de frutas y verduras a domicilio</h6>
+        <h6 class="display-6">Cantidad Noticias: 1 </h6>
+        <div class="pading"></div>
+      </div>
+    </div>
+    </div>
+    </div>
+{%endblock%}
